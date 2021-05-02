@@ -1,0 +1,14 @@
+.box {
+    background-color: blue;
+  
+    height:100%;
+    width:100%;
+    border: 2px solid black;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    height: 40vw;
+    width: 20%;
+}
