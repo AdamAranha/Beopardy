@@ -1,12 +1,15 @@
 import React from 'react';
 import './Game.css'
+import Header from '../../components/Header/Header'
 import Board from '../../components/Board/Board'
+import Scoreboard from '../../components/Scoreboard/Scoreboard'
 
 function Game() {
     return (
         <div className='game'>
-            <h1>Beopardy</h1>
+            <Header />
             <Board />
+            <Scoreboard />
         </div>
 
     )

@@ -3,9 +3,13 @@ const app = express();
 const path = require('path');
 
 const PORT = 5000 || process.env.PORT
-app.use(express.static(path.join(__dirname, '../tempPublic')));
+app.use(express.static(path.join(__dirname, '../client/build')));
 
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../tempPublic', 'index.html'));
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
 })
-app.listen(PORT, () => console.log('Listening on http://localhost:3000'))
+
+// app.get('/game', (req, res) => {
+
+// })
+app.listen(PORT, () => console.log(`Listening on http://localhost:${PORT}`))

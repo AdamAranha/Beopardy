@@ -1,0 +1,14 @@
+.scoreboard {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-top: 2px solid white;
+    margin-top: 10px;
+    height: 500px;
+
+}
+
+p {
+    color: white;
+text-align: center;
+}

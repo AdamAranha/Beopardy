@@ -1,0 +1,112 @@
+{
+    "colOne": {
+        "boxOne": {
+            "question": "",
+            "answer": ""
+        },
+        "boxTwo": {
+            "question": "",
+            "answer": ""
+        },
+        "boxThree": {
+            "question": "",
+            "answer": ""
+        },
+        "boxFour": {
+            "question": "",
+            "answer": ""
+        },
+        "boxFive": {
+            "question": "",
+            "answer": ""
+        }
+    },
+    "colTwo": {
+        "boxOne": {
+            "question": "",
+            "answer": ""
+        },
+        "boxTwo": {
+            "question": "",
+            "answer": ""
+        },
+        "boxThree": {
+            "question": "",
+            "answer": ""
+        },
+        "boxFour": {
+            "question": "",
+            "answer": ""
+        },
+        "boxFive": {
+            "question": "",
+            "answer": ""
+        }
+    },
+    "colThree": {
+        "boxOne": {
+            "question": "",
+            "answer": ""
+        },
+        "boxTwo": {
+            "question": "",
+            "answer": ""
+        },
+        "boxThree": {
+            "question": "",
+            "answer": ""
+        },
+        "boxFour": {
+            "question": "",
+            "answer": ""
+        },
+        "boxFive": {
+            "question": "",
+            "answer": ""
+        }
+    },
+    "colFour": {
+        "boxOne": {
+            "question": "",
+            "answer": ""
+        },
+        "boxTwo": {
+            "question": "",
+            "answer": ""
+        },
+        "boxThree": {
+            "question": "",
+            "answer": ""
+        },
+        "boxFour": {
+            "question": "",
+            "answer": ""
+        },
+        "boxFive": {
+            "question": "",
+            "answer": ""
+        }
+    },
+    "colFive": {
+        "boxOne": {
+            "question": "",
+            "answer": ""
+        },
+        "boxTwo": {
+            "question": "",
+            "answer": ""
+        },
+        "boxThree": {
+            "question": "",
+            "answer": ""
+        },
+        "boxFour": {
+            "question": "",
+            "answer": ""
+        },
+        "boxFive": {
+            "question": "",
+            "answer": ""
+        }
+    }
+}
