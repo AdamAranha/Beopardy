@@ -1,0 +1,11 @@
+.box {
+    background-color: rgb(17, 17, 189);
+  
+
+    border: 2px solid black;
+    font-family: 'Antonio', sans-serif;
+    font-size:100px;
+    text-align: center;
+    color: rgb(231, 203, 108);
+    text-shadow: 5px 5px black;
+}

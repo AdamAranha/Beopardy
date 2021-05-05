@@ -1,6 +1,7 @@
 import React from 'react';
 import './Board.css'
 import Column from '../Column/Column'
+import Box from '../Box/Box'
 
 function Board() {
     return (
@@ -11,6 +12,20 @@ function Board() {
             <Column />
             <Column />
             <Column />
+
+            <div className='boardTwo'>
+                <Box />
+                <Box />
+                <Box />
+                <Box />
+                <Box />
+
+                <Box />
+                <Box />
+                <Box />
+                <Box />
+                <Box />
+            </div>
         </div>
     )
 };

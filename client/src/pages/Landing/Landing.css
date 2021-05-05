@@ -1,0 +1,43 @@
+
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.landButton {
+    height: 20vh;
+    width: 50vw;
+    border-radius:15px;
+
+}
+
+.landButton:hover {
+    filter: brightness(150%);
+}
+
+.guestButton {
+    display: flex;
+    background-color: lightgray;
+    border: 2px solid gray;
+    color:rgb(38, 38, 117);
+    justify-content: center;
+    align-items: center;
+}
+
+.loginButton {
+    display: flex;
+    margin-top: 5vh;
+    background-color: rgb(38, 38, 117);
+    border: 2px solid rgb(25, 25, 78);
+    color: lightgray;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    font-size: clamp(1rem,4rem,5rem);
+
+}
