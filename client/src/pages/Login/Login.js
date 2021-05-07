@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import './Login.css';
 import Header from '../../components/Header/Header'
-
+import axios from 'axios'
+    ;
 
 function Login() {
     const [input, setInput] = useState({
@@ -23,6 +24,11 @@ function Login() {
     function handleClick(event) {
         event.preventDefault();
         console.log(input)
+        const credentials = {
+            username: input.username,
+            password: input.password
+        };
+        axios.post('http://localhost:5000/api/login', credentials);
     }
 
     return (
@@ -32,7 +38,7 @@ function Login() {
             <div className='login-card'>
                 <div className='login-content'>
 
-                    <form method='POST' action='/api/login'>
+                    <form>
                         <label name='username'>Username</label>
                         <input name='username' value={input.username} onChange={handleChange} type={input.username} placeholder='Starlord' required></input>
 
