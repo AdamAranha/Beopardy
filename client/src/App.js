@@ -1,18 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
-import Game from './pages/Game/Game'
 import { BrowserRouter, Route, Router, Switch } from "react-router-dom";
-import landing from './pages/Landing/Landing'
-import game from './pages/Game/Game'
+import Landing from './pages/Landing/Landing'
+import Game from './pages/Game/Game'
+import Login from './pages/Login/Login'
 
 
 function App() {
   return (
     <div>
       <BrowserRouter>
-        <Route exact path="/game" component={game}></Route>
-        <Route exact path="/" component={landing}></Route>
-
+        <Route exact path="/game" component={Game}></Route>
+        <Route exact patth="/login" component={Login}></Route>
+        <Route exact path="/" component={Landing}></Route>
       </BrowserRouter>
     </div>
   );

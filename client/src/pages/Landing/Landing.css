@@ -41,3 +41,7 @@ h2 {
     font-size: clamp(1rem,4rem,5rem);
 
 }
+
+.removeUnderline {
+    text-decoration: none;
+}
