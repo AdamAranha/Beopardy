@@ -11,7 +11,8 @@ const PORT = 5000 || process.env.PORT
 
 ORM.makeAndCheckConnection()
 
-ORM.findUser('Bob')
+
+
 
 
 

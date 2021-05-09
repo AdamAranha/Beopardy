@@ -32,14 +32,22 @@ function registerUser(username, password) {
 }
 
 // Search db for user
-function findUser(username) {
-    db.userSchema.findOne({ username }, (err, result) => {
+async function findUser(username, password) {
+    let response = ''
+    await db.userSchema.findOne({ username: username }, (err, result) => {
         if (result) {
-            console.log("Found 'em!")
+            console.log(result)
+            response = 'User was found'
+            if (password === result.password) {
+                response = 'User logged in'
+            } else {
+                response = 'Password incorrect'
+            }
         } else {
-            console.log('User not registered!')
+            response = 'User not registered!'
         }
     })
+    return response
 }
 
 

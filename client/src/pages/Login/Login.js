@@ -24,12 +24,25 @@ function Login() {
     function handleClick(event) {
         event.preventDefault();
         console.log(input)
-        const credentials = {
-            username: input.username,
-            password: input.password
-        };
-        axios.post('http://localhost:5000/api/login', credentials);
-    }
+        const { username, password } = input
+
+        axios({
+            method: 'get',
+            url: 'http://localhost:5000/api/login',
+            headers: {
+                username: username,
+                password: password
+            }
+        })
+            .then(res => console.log(res.data))
+            .catch(err => console.log(err))
+        // axios.get('http://localhost:5000/api/login', credentials).then(result => {
+        //     console.log(result)
+        // });
+
+    };
+
+
 
     return (
         <div className='wrapper-login'>
