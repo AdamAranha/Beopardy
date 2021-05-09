@@ -3,11 +3,10 @@ import './Header.css';
 
 function Header() {
     return (
-        <div>
+        <div className='header'>
             <h1>
                 BEOPARDY
             </h1>
-
         </div>
     )
 };

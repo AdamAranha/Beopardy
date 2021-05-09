@@ -1,16 +1,11 @@
 .wrapper-login {
     display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.login-card {
-    background-color: rgb(226, 221, 221);
-    height: 70vh;
-    width: 50vw;
-    border-radius: 5px;
-}
+
 
 .register-card {
     background-color: rgb(226, 221, 221);

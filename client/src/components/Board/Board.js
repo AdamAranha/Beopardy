@@ -12,6 +12,7 @@ function Board() {
             <Column />
             <Column />
             <Column />
+            <Column />
 
             <div className='boardTwo'>
                 <Box />

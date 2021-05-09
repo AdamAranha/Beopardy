@@ -9,9 +9,11 @@ function Landing() {
 
             <Header />
             <div className='wrapper'>
-                <div className=' landButton guestButton'>
-                    <h2>Continue as Guest</h2>
-                </div>
+                <Link to='/game' className='removeUnderline'>
+                    <div className=' landButton guestButton'>
+                        <h2>Continue as Guest</h2>
+                    </div>
+                </Link>
                 <Link to='/login' className='removeUnderline'>
                     <div className='landButton loginButton'>
                         <h2>Login</h2>

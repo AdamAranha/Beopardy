@@ -15,4 +15,15 @@ router.get('/login', (req, res) => {
         .catch(err => console.log(err))
 })
 
+router.post('/register', (req, res) => {
+    const { username, password } = req.body;
+    ORM.findUser(username, password)
+        .then(result => {
+            console.log(result)
+            res.send(result)
+        })
+        .catch(err => console.log(err))
+    ORM.registerUser(username, password)
+})
+
 module.exports = router
