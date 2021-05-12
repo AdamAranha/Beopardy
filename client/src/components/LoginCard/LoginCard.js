@@ -2,10 +2,8 @@ import React, { useState } from 'react';
 import './LoginCard.css';
 import axios from 'axios';
 
-
-
-function LoginCard() {
-    const [cardState, setCardState] = useState('flex')
+function LoginCard(props) {
+    // const [cardState, setCardState] = useState('flex')
     const [input, setInput] = useState({
         username: '',
         password: ''
@@ -28,25 +26,27 @@ function LoginCard() {
         const { username, password } = input
 
         axios({
-            method: 'get',
+            method: 'post',
             url: 'http://localhost:5000/api/login',
-            headers: {
+            data: {
                 username: username,
                 password: password
             }
+            ,
+            withCredentials: true
         })
-            .then(res => console.log(res.data))
+            .then(res => console.log(res))
             .catch(err => console.log(err))
     };
 
-    function showRegister() {
-        setCardState('none')
-    }
+    // function showRegister() {
+    //     setCardState('none')
+    // }
 
 
 
     return (
-        <div className='login-card' style={{ display: cardState }}>
+        <div className='login-card' style={{ display: props.loginShow }} >
             <div className='login-content'>
                 <h1>Login</h1>
                 <form>
@@ -57,7 +57,7 @@ function LoginCard() {
                     <input name='password' value={input.password} onChange={handleChange} type='password' placeholder='Password' required></input>
 
                     <button onClick={handleClick}> Login</button>
-                    <div onClick={showRegister} className='registerText'>
+                    <div onClick={props.function} className='registerText'>
                         <p>Register an account</p>
                     </div>
 

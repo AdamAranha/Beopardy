@@ -16,37 +16,30 @@ async function makeAndCheckConnection() {
 }
 
 // Adds new user to the db
-function registerUser(username, password) {
-    const newUser = new db.userSchema({
-        username: username,
-        password: password
-    })
+function registerUser(username, hashedPassword) {
+    // let response = ''
 
-    newUser.save((err) => {
-        if (!err) {
-            console.log('New user registered!')
-        } else {
-            console.log('New user NOT registered!')
-        }
+    db.userSchema.create({
+        username: username,
+        password: hashedPassword
+    }).then((result) => {
+        console.log('[The User was registered]:', result)
+    }).catch((err) => {
+        res.status(400).json({ error: err })
     })
 }
 
 // Search db for user
 async function findUser(username, password) {
     let response = ''
-    await db.userSchema.findOne({ username: username }, (err, result) => {
+    await db.userSchema.findOne({ username }, (err, result) => {
         if (result) {
-            console.log(result)
-            response = 'User was found'
-            if (password === result.password) {
-                response = 'User logged in'
-            } else {
-                response = 'Password incorrect'
-            }
+            response = result
         } else {
-            response = 'User not registered!'
+            response = null
         }
-    })
+    }).catch(err => console.log(err))
+    // console.log(response)
     return response
 }
 
