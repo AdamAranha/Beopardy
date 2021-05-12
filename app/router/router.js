@@ -4,12 +4,20 @@ const ORM = require('../db/orm');
 const bcrypt = require('bcrypt');
 
 
-const { createToken, validateToken } = require('../JWT/JWT');
+const { createToken, validateToken, parsePayload } = require('../JWT/JWT');
+
+function parseCookie(req, res, next) {
+    // const cookie = req.cookie
+    // const cookieHead = req.headers.cookie
+    // console.log(cookie, cookieHead)
+    console.log(req.headers.cookie)
+    next()
+}
 
 router.post('/login', (req, res) => {
     // res.header("Access-Control-Allow-Origin", "*");
     const { username, password, } = req.body
-
+    parsePayload(req.headers.cookie)
     ORM.findUser(username, password)
         .then(response => {
             if (response) {
@@ -24,8 +32,9 @@ router.post('/login', (req, res) => {
                             const accessToken = createToken(response)
 
                             res.cookie('access-token', accessToken, {
-                                // 30 Days in milliseconds
-                                maxAge: 60 * 60 * 24 * 30 * 1000,
+                                // 1 Days in milliseconds
+                                // maxAge: 1000 * 60 * 60 * 24,
+                                maxAge: 1000 * 60 * 60,
                                 httpOnly: true
                             })
 
