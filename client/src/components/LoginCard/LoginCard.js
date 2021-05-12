@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './LoginCard.css';
 import axios from 'axios';
 
@@ -8,6 +8,21 @@ function LoginCard(props) {
         username: '',
         password: ''
     })
+
+    useEffect(() => {
+        axios({
+            method: 'GET',
+            url: 'http://localhost:5000/api/checkauth',
+            withCredentials: true
+        }).then((response) => {
+            if (response.data) {
+                console.log(response)
+                document.getElementById('test-test').innerText = 'Token found'
+            }
+        })
+
+        // console.log(document.cookies)
+    }, [])
 
     function handleChange(event) {
         const { name, value } = event.target
@@ -26,7 +41,7 @@ function LoginCard(props) {
         const { username, password } = input
 
         axios({
-            method: 'post',
+            method: 'POST',
             url: 'http://localhost:5000/api/login',
             data: {
                 username: username,
@@ -59,6 +74,12 @@ function LoginCard(props) {
                     <button onClick={handleClick}> Login</button>
                     <div onClick={props.function} className='registerText'>
                         <p>Register an account</p>
+                    </div>
+
+                    <div id='test-test'>
+                        <p id='test-test'>
+
+                        </p>
                     </div>
 
 

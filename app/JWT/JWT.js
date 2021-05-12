@@ -1,42 +1,41 @@
 const { sign, verify } = require('jsonwebtoken');
 
 function createToken(user) {
-    const accessToken = sign({ username: user.username }, 'secret');
+    const accessToken = sign({ username: user.username }, 'supersecrettoken');
 
     return accessToken;
 };
 
-// function validateToken(req, res, next) {
-//     const accessToken = req.headers.cookie['access-token']
+function validateToken(req, res, next) {
+    cosnt
+    const accessToken = cookie.slice(13, cookie.length)
 
-//     if (!accessToken) return res.status(400).json({ error: 'User not Authenticated' })
-//     try {
-//         const validToken = verify(accessToken, 'secret')
-//         if (validToken) {
-//             req.authenticated = true
-//             return next()
-//         }
-//     } catch (err) {
-//         return res.status(400).json({ error: err })
-//     }
-// }
+    if (!accessToken) return res.status(400).json({ error: 'User not Authenticated' })
+    try {
+        const validToken = verify(accessToken, 'supersecrettoken')
+        if (validToken) {
+            req.authenticated = true
+            return next()
+        }
+    } catch (err) {
+        return res.status(400).json({ error: err })
+    }
+}
 
 function parsePayload(cookie) {
-    // console.log('[Cookie]:', cookie)
-    // console.log(typeof cookie)
-
+    let response = ''
     const newCookie = cookie.slice(13, cookie.length)
-    // console.log(newCookie)
 
-
-    verify(newCookie, 'secret', (err, decoded) => {
+    verify(newCookie, 'supersecrettoken', (err, decoded) => {
         if (decoded) {
-            console.log('[JWT Parsed Username]:', decoded.username)
+            // console.log('[JWT Parsed Username]:', decoded.username)
+            response = decoded
         } else {
             console.log(err)
         }
 
     })
+    return response
 }
 
 module.exports = { createToken, parsePayload }

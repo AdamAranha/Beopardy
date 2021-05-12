@@ -1,0 +1,8 @@
+.authedButton {
+    display: flex;
+    background-color: rgb(212, 99, 54);
+    border: 2px solid rgb(145, 66, 35);
+    color:rgb(7, 12, 22);
+    justify-content: center;
+    align-items: center;
+}
