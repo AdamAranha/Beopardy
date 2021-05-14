@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './LoginCard.css';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 function LoginCard(props) {
@@ -14,12 +15,13 @@ function LoginCard(props) {
             method: 'GET',
             url: 'http://localhost:5000/api/checkauth',
             withCredentials: true
-        }).then((response) => {
-            if (response.data) {
-                console.log(response)
-                document.getElementById('test-test').innerText = 'Token found'
-            }
         })
+        // .then((response) => {
+        //     if (response.data) {
+        //         console.log(response)
+        //         document.getElementById('test-test').innerText = 'Token found'
+        //     }
+        // })
 
         // console.log(document.cookies)
     }, [])
@@ -62,28 +64,31 @@ function LoginCard(props) {
 
     return (
         <div className='login-card' style={{ display: props.loginShow }} >
-            <div className='login-content'>
+            <div className='login-header'>
                 <h1>Login</h1>
-                <form>
-                    <label name='username'>Username</label>
-                    <input name='username' value={input.username} onChange={handleChange} type={input.username} placeholder='Starlord' required></input>
-
-                    <label name='password'> Password</label>
-                    <input name='password' value={input.password} onChange={handleChange} type='password' placeholder='Password' required></input>
-
-                    <button onClick={handleClick}> Login</button>
-                    <div onClick={props.function} className='registerText'>
-                        <p>Register an account</p>
+            </div>
+            <div className='login-content'>
+                <form className='login-form'>
+                    <div className='section-username'>
+                        {/* <label name='username'>Username</label> */}
+                        <input name='username' type='text' value={input.username} onChange={handleChange} placeholder='Username' required></input>
                     </div>
-
-                    <div id='test-test'>
-                        <p id='test-test'>
-
-                        </p>
+                    <div className='section-password'>
+                        {/* <label name='password'> Password</label> */}
+                        <input name='password' type='password' value={input.password} onChange={handleChange} placeholder='Password' required></input>
                     </div>
-
-
+                    <button onClick={handleClick} className='login-button'> Login</button>
                 </form>
+            </div>
+            <div className='login-footer'>
+                <Link to='/'>
+                    <div>
+                        <p className='backText'>&lt;&lt; Home</p>
+                    </div>
+                </Link>
+                <div onClick={props.function}>
+                    <p className='registerText'>Register&gt;&gt;</p>
+                </div>
             </div>
         </div >
     )

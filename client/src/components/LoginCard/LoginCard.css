@@ -1,13 +1,100 @@
+/* *,::before,*::after {
+  box-sizing: border-box;
+} */
+
 .login-card {
-  
-    background-color: rgb(226, 221, 221);
-    height: 25vw;
-    width: 50vw;
-    border-radius: 5px;
-    color: black;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 2vw;
+  background-color: rgb(255, 255, 255);
+  height: 25vw;
+  width: 50vw;
+  border-radius: 5px;
+  color: black;
 }
 
-p {
-    color: black;
+
+.login-header {
+text-align: center;
+font-size: 1vw;
 }
+
+.login-content {
+  display: flex;
+  justify-content: center;
+}
+
+.login-footer {
+  position: relative;
+  bottom: 0;
+  margin: 1.5vw;
+}
+
+.backText {
+  position: absolute;
+  padding: 0;
+  left: 0;
+  margin-top: 3vw;
+}
+
+.backText:hover {
+  cursor: pointer;
+}
+
+.registerText {
+  position: absolute;
+  padding: 0;
+  right: 0;
+  margin-top: 3vw;
+}
+
+.registerText:hover {
+  cursor:pointer;
+}
+
+.login-button {
+  width:100%;
+}
+
+.login-form  {
+  display: flex;
+  flex-direction: column;
+  height: 10vw;
+}
+
+.login-form button:hover {
+  cursor: pointer;
+}
+
+.login-form input[type=text] {
+  padding: 1vw;
+  margin: .5vw;
+  border:0; 
+  border-bottom:1px solid #eee; 
+  font-size: .8vw;
+}
+
+.login-form input[type=password] {
+  padding: 1vw;
+  margin: .5vw;
+  border:0; 
+  border-bottom:1px solid #eee; 
+  font-size: .8vw;
+}
+
+.login-button {
+  padding: 1vw;
+  border-radius: 50px;
+  border: 1px solid black;
+  font-size: .8vw;
+}
+
+.login-button:hover {
+  filter: brightness(50%);
+
+}
+/* .login-form input{
+border-radius: 50px;
+} */
 

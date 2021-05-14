@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './RegisterCard.css'
+import { Link } from 'react-router-dom';
 import axios from 'axios'
 
 function RegisterCard(props) {
@@ -40,22 +41,31 @@ function RegisterCard(props) {
 
     return (
         <div className='register-card' style={{ display: props.registerShow }} >
-            <div className='register-content'>
+            <div className='register-header'>
                 <h1>Register</h1>
-                <form>
-                    <label name='username'>Username</label>
-                    <input name='username' value={input.username} onChange={handleChange} type={input.username} placeholder='Starlord' required></input>
-
-                    <label name='password'> Password</label>
-                    <input name='password' value={input.password} onChange={handleChange} type='password' placeholder='Password' required></input>
-
-                    <button onClick={handleClick}> Login</button>
-                    <div onClick={props.function} className='registerText'>
-                        <p>Login to an account</p>
+            </div>
+            <div className='register-content'>
+                <form className='register-form'>
+                    <div className='section-username'>
+                        {/* <label name='username'>Username</label> */}
+                        <input name='username' type='text' value={input.username} onChange={handleChange} placeholder='Username' required></input>
                     </div>
-
-
+                    <div className='section-password'>
+                        {/* <label name='password'> Password</label> */}
+                        <input name='password' type='password' value={input.password} onChange={handleChange} placeholder='Password' required></input>
+                    </div>
+                    <button onClick={handleClick} className='register-button'> Register</button>
                 </form>
+            </div>
+            <div className='register-footer'>
+                <Link to='/'>
+                    <div>
+                        <p className='backText'>&lt;&lt; Home</p>
+                    </div>
+                </Link>
+                <div onClick={props.function}>
+                    <p className='loginText'>Login&gt;&gt;</p>
+                </div>
             </div>
         </div >
     )

@@ -7,15 +7,15 @@ import RegisterCard from '../../components/RegisterCard/RegisterCard'
 
 function Login() {
 
-    const [loginCardState, setLoginCardState] = useState('flex')
+    const [loginCardState, setLoginCardState] = useState('inline')
     const [registerCardState, setRegisterCard] = useState('none')
 
     function showRegister() {
-        if (loginCardState === 'flex') {
+        if (loginCardState === 'inline') {
             setLoginCardState('none');
-            setRegisterCard('flex');
+            setRegisterCard('inline');
         } else {
-            setLoginCardState('flex');
+            setLoginCardState('inline');
             setRegisterCard('none');
         }
     };

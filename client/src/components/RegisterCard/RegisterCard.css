@@ -1,8 +1,92 @@
 .register-card {
-  
-    background-color: rgb(226, 221, 221);
-    height: 70vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 2vw;
+    background-color: rgb(255, 255, 255);
+    height: 25vw;
     width: 50vw;
     border-radius: 5px;
     color: black;
-}
+  }
+  
+  
+  .register-header {
+  text-align: center;
+  font-size: 1vw;
+  }
+  
+  .register-content {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .register-footer {
+    position: relative;
+    bottom: 0;
+    margin: 1.5vw;
+  }
+  
+  .backText {
+    position: absolute;
+    padding: 0;
+    left: 0;
+    margin-top: 3vw;
+  }
+  
+  .backText:hover {
+    cursor: pointer;
+  }
+  
+  .loginText {
+    position: absolute;
+    padding: 0;
+    right: 0;
+    margin-top: 3vw;
+  }
+  
+  .loginText:hover {
+    cursor:pointer;
+  }
+  
+  .register-button {
+    width:100%;
+  }
+  
+  .register-form  {
+    display: flex;
+    flex-direction: column;
+    height: 10vw;
+  }
+  
+  .register-form button:hover {
+    cursor: pointer;
+  }
+  
+  .register-form input[type=text] {
+    padding: 1vw;
+    margin: .5vw;
+    border:0; 
+    border-bottom:1px solid #eee; 
+    font-size: .8vw;
+  }
+  
+  .register-form input[type=password] {
+    padding: 1vw;
+    margin: .5vw;
+    border:0; 
+    border-bottom:1px solid #eee; 
+    font-size: .8vw;
+  }
+  
+  .register-button {
+    padding: 1vw;
+    border-radius: 50px;
+    border: 1px solid black;
+    font-size: .8vw;
+  }
+  
+  .register-button:hover {
+    filter: brightness(50%);
+  
+  }
