@@ -10,9 +10,9 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-        <Route exact path="/" component={Landing}></Route>
-        <Route exact path="/game" component={Game}></Route>
-        <Route exact path="/login" component={Login}></Route>
+        <Route exact path="/" component={Landing} />
+        <Route exact path="/game" component={Game} />
+        <Route exact path="/login" component={Login} />
       </BrowserRouter>
     </div>
   );

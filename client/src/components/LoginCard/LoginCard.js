@@ -10,21 +10,6 @@ function LoginCard(props) {
         password: ''
     })
 
-    useEffect(() => {
-        axios({
-            method: 'GET',
-            url: 'http://localhost:5000/api/checkauth',
-            withCredentials: true
-        })
-        // .then((response) => {
-        //     if (response.data) {
-        //         console.log(response)
-        //         document.getElementById('test-test').innerText = 'Token found'
-        //     }
-        // })
-
-        // console.log(document.cookies)
-    }, [])
 
     function handleChange(event) {
         const { name, value } = event.target

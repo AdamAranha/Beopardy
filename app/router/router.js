@@ -72,8 +72,8 @@ router.post('/register', async (req, res) => {
 
 router.get('/checkauth', (req, res) => {
     if (req.headers.cookie) {
-        res.json(parsePayload(req.headers.cookie))
-    }
+        res.status(200).json(true)
+    } else res.status(200).json(false)
 })
 
 module.exports = router
