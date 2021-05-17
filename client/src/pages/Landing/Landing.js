@@ -10,11 +10,9 @@ function Landing() {
     const [authState, setAuthState] = useState('none')
     const [unAuthState, setUnAuthState] = useState('inline')
 
-    console.log('This is the landing page')
 
 
     useEffect(() => {
-        console.log('This is the effect')
         axios({
             method: 'GET',
             url: 'http://localhost:5000/api/checkauth',

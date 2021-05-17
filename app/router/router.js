@@ -40,7 +40,7 @@ router.post('/login', (req, res) => {
                     })
             } else {
                 console.log('Unable to find user')
-                res.status(400).json('Unable to find user')
+                res.status(400).json({ message: 'Unable to find user' })
             }
         })
         .catch((err) => {

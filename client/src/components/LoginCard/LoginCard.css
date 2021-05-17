@@ -57,6 +57,11 @@ font-size: 1vw;
   width:100%;
 }
 
+.err-text {
+  text-align: center;
+  color: #f50707;
+}
+
 .login-form  {
   display: flex;
   flex-direction: column;

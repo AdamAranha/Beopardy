@@ -1,11 +1,30 @@
 .box {
-    background-color: rgb(17, 17, 189);
-  
-
-    border: 2px solid black;
-    font-family: 'Antonio', sans-serif;
-    font-size:100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    height:9vw ;
+    width: 13.33333333333333vw;
+
+    background-color: rgb(17, 17, 189);
+    border: 2px solid black;
+
+}
+
+.value {
+    font-family: 'Antonio', sans-serif;
+    font-size:5vw;
     color: rgb(231, 203, 108);
     text-shadow: 5px 5px black;
+}
+
+.category {
+    font-family: 'Antonio', sans-serif;
+    font-size:2.5vw;
+    color: rgb(240, 239, 239);
+    text-shadow: 5px 5px black;
+}
+
+.box-value:hover:hover {
+    filter: brightness(120%);
 }

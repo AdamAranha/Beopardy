@@ -4,29 +4,57 @@ import Column from '../Column/Column'
 import Box from '../Box/Box'
 
 function Board() {
+    let boxName = 'one-one'
+    function boxClick() {
+        console.log(boxName)
+    }
+
     return (
         // This is where the board goes
         <div className='board'>
-            <Column />
-            <Column />
-            <Column />
-            <Column />
-            <Column />
-            <Column />
+            <Box category='Category Category Category' />
+            <Box category='Category' />
+            <Box category='Category' />
+            <Box category='Category' />
+            <Box category='Category' />
+            <Box category='Category' />
 
-            <div className='boardTwo'>
-                <Box />
-                <Box />
-                <Box />
-                <Box />
-                <Box />
+            <Box value='100' extraClass='box-value' clickFunction={boxClick} name={boxName} />
+            <Box value='100' extraClass='box-value' />
+            <Box value='100' extraClass='box-value' />
+            <Box value='100' extraClass='box-value' />
+            <Box value='100' extraClass='box-value' />
+            <Box value='100' extraClass='box-value' />
 
-                <Box />
-                <Box />
-                <Box />
-                <Box />
-                <Box />
-            </div>
+            <Box value='200' extraClass='box-value' />
+            <Box value='200' extraClass='box-value' />
+            <Box value='200' extraClass='box-value' />
+            <Box value='200' extraClass='box-value' />
+            <Box value='200' extraClass='box-value' />
+            <Box value='200' extraClass='box-value' />
+
+            <Box value='300' extraClass='box-value' />
+            <Box value='300' extraClass='box-value' />
+            <Box value='300' extraClass='box-value' />
+            <Box value='300' extraClass='box-value' />
+            <Box value='300' extraClass='box-value' />
+            <Box value='300' extraClass='box-value' />
+
+            <Box value='400' extraClass='box-value' />
+            <Box value='400' extraClass='box-value' />
+            <Box value='400' extraClass='box-value' />
+            <Box value='400' extraClass='box-value' />
+            <Box value='400' extraClass='box-value' />
+            <Box value='400' extraClass='box-value' />
+
+            <Box value='500' extraClass='box-value' />
+            <Box value='500' extraClass='box-value' />
+            <Box value='500' extraClass='box-value' />
+            <Box value='500' extraClass='box-value' />
+            <Box value='500' extraClass='box-value' />
+            <Box value='500' extraClass='box-value' />
+
+
         </div>
     )
 };

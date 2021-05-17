@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import './LoginCard.css';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
 
 function LoginCard(props) {
+    let history = useHistory();
     // const [cardState, setCardState] = useState('flex')
+    const [state, setState] = useState('')
+    const [errText, setErrText] = useState('')
+    const [errTextColour, setErrTextColour] = useState('')
     const [input, setInput] = useState({
         username: '',
         password: ''
@@ -24,7 +28,6 @@ function LoginCard(props) {
 
     function handleClick(event) {
         event.preventDefault();
-        console.log(input)
         const { username, password } = input
 
         axios({
@@ -37,8 +40,18 @@ function LoginCard(props) {
             ,
             withCredentials: true
         })
-            .then(res => console.log(res))
-            .catch(err => console.log(err))
+            .then(res => {
+                console.log(res)
+                setErrTextColour('#19af14')
+                setErrText('Log in Successful')
+                setTimeout(() => {
+                    history.push('/')
+                }, 2000)
+            })
+            .catch(err => {
+                setErrTextColour('#f50707')
+                setErrText('Username or Password is incorrect')
+            })
     };
 
     // function showRegister() {
@@ -53,7 +66,11 @@ function LoginCard(props) {
                 <h1>Login</h1>
             </div>
             <div className='login-content'>
+
                 <form className='login-form'>
+                    <p className='err-text' style={{ color: errTextColour }}>
+                        {errText}
+                    </p>
                     <div className='section-username'>
                         {/* <label name='username'>Username</label> */}
                         <input name='username' type='text' value={input.username} onChange={handleChange} placeholder='Username' required></input>
