@@ -58,12 +58,13 @@ router.post('/register', async (req, res) => {
                 bcrypt.hash(password, 10)
                     .then((hash) => {
                         ORM.registerUser(username, hash)
+                        res.json({ message: 'User Created!' })
                     }).catch((err) => {
                         res.status(400).json({ error: err })
                     })
             } else {
-                console.log('Unable to new register User')
-                res.json('Unable to new register User')
+                console.log('Username is already in use')
+                res.status(400).json('Username is already in use')
             }
         }).catch((err) => {
             res.status(400).json({ error: err })

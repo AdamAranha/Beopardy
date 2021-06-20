@@ -20,11 +20,14 @@ function Login() {
         }
     };
 
+    const passObj = {}
+    passObj.function = showRegister
+
     return (
         <div className='wrapper-login'>
             <Header />
             <LoginCard loginShow={loginCardState} function={showRegister} />
-            <RegisterCard registerShow={registerCardState} function={showRegister} />
+            <RegisterCard registerShow={registerCardState} function={passObj} />
         </div>
     )
 };

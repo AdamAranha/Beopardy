@@ -1,9 +1,9 @@
 import React from 'react';
 import './Scoreboard.css'
 
-function Scoreboard() {
+function Scoreboard(props) {
     return (
-        <div className='scoreboard'>
+        <div className='scoreboard' style={{ display: props.scoreShow }}>
             <p>
                 This is where the scores go
             </p>

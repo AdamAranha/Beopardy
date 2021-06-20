@@ -31,7 +31,7 @@ function registerUser(username, hashedPassword) {
 
 // Search db for user
 async function findUser(username, password) {
-    let response = ''
+    let response = null
     await db.userSchema.findOne({ username }, (err, result) => {
         if (result) {
             response = result

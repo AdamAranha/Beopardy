@@ -4,6 +4,9 @@ import { Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
 
 function LoginCard(props) {
+
+    let tempVar;
+
     let history = useHistory();
     // const [cardState, setCardState] = useState('flex')
     const [state, setState] = useState('')
@@ -61,6 +64,8 @@ function LoginCard(props) {
 
 
     return (
+
+
         <div className='login-card' style={{ display: props.loginShow }} >
             <div className='login-header'>
                 <h1>Login</h1>
@@ -92,6 +97,8 @@ function LoginCard(props) {
                     <p className='registerText'>Register&gt;&gt;</p>
                 </div>
             </div>
+
+
         </div >
     )
 };

@@ -3,7 +3,7 @@ import './Board.css'
 import Column from '../Column/Column'
 import Box from '../Box/Box'
 
-function Board() {
+function Board(props) {
     let boxName = 'one-one'
     function boxClick() {
         console.log(boxName)
@@ -11,7 +11,7 @@ function Board() {
 
     return (
         // This is where the board goes
-        <div className='board'>
+        <div className='board' style={{ display: props.boardShow }}>
             <Box category='Category Category Category' />
             <Box category='Category' />
             <Box category='Category' />

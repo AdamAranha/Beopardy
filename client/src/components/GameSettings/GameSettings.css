@@ -1,0 +1,46 @@
+.gameSettings {
+    /* height: 35vw; */
+    width: 70vw;
+    /* height: 70vh; */
+
+    background-color: #ffffff;
+    border-radius: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.settings-content{
+  margin: 1vw;
+}
+
+.settings-header {
+    text-align: center;
+    font-size:1vw;
+}
+
+.item-settings-content{
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+}
+
+.item-settings-content-show{
+
+  height: auto;
+  max-height: 9999px;
+  transition: all 0.5s cubic-bezier(1, 0, 1, 0);
+
+}
+
+.item-settings-title{
+  background-color: lightblue;
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: .5vh;
+  cursor: pointer;
+}
+
+.item-settings-title h2 {
+
+}
